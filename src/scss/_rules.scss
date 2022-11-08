@@ -1,0 +1,92 @@
+.rules {
+    padding: 60px 0px 60px 0px;
+    &__header {
+        margin: 0px 0px 40px 0px;
+    }
+    &__items {
+        list-style: none;
+        padding: 0;
+    }
+    &__item {
+        color: #b8b6b4;
+        font-size: 18px;
+        line-height: 150%;
+        padding: 15px 0 15px 35px;
+        position: relative;
+    }
+    &__item:nth-child(1):before {
+        content: url(/img/icons/rules_icons/adult.svg);
+        position: absolute;
+        top: 18px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+    }
+    &__item:nth-child(2):before {
+        content: url(/img/icons/rules_icons/forbidden.svg);
+        position: absolute;
+        top: 18px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+    }
+    &__item:nth-child(3):before {
+        content: url(/img/icons/rules_icons/forbidden.svg);
+        position: absolute;
+        top: 18px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+    }
+    &__item:nth-child(4):before {
+        content: url(/img/icons/rules_icons/forbidden.svg);
+        position: absolute;
+        top: 18px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+    }
+    &__item:nth-child(5):before {
+        content: url(/img/icons/rules_icons/check.svg);
+        position: absolute;
+        top: 18px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+// .rules__items li {
+//     transform: translate(-120%, 0px);
+//     transition: all 0.3s ease 0s;
+// }
+
+// .rules__items._active li:nth-child(1) {
+//     transition: all 0.8s ease 0s;
+// }
+
+// .rules__items._active li:nth-child(2) {
+//     transition: all 0.8s ease 0.2s;
+// }
+
+// .rules__items._active li:nth-child(3) {
+//     transition: all 0.8s ease 0.4s;
+// }
+
+// .rules__items._active li:nth-child(4) {
+//     transition: all 0.8s ease 0.6s;
+// }
+
+// .rules__items._active li:nth-child(5) {
+//     transition: all 0.8s ease 0.8s;
+// }
+
+// .rules__items._active li {
+//     transform: translate(0px, 0px);
+// }
+
+@media (max-width: 726px) {
+    .rules__item {
+        font-size: 16px;
+    }
+}
