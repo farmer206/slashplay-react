@@ -45,7 +45,7 @@ const FormRegister = () => {
                     <label htmlFor="formAgreement" className="checkbox__label">
                         <span>
                             Я даю свое согласие на обработку персональных данных в
-                            соответствии с<CustomLink to="#">Условиями</CustomLink>
+                            соответствии с<CustomLink to="#"> Условиями</CustomLink>
                         </span>
                     </label>
                 </div>

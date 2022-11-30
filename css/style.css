@@ -131,14 +131,6 @@ h1, h2, h3, h4, h5, h6 {
 .header__menu {
   flex: 1 1 auto;
 }
-.header__button {
-  flex: 0 0 200px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-}
-
 .menu {
   display: flex;
   justify-content: flex-end;
@@ -177,31 +169,6 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-.button-login span::before {
-  content: "Sign in";
-  color: #e1cb30;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-
-.button-profile span::before {
-  content: "Profile";
-  color: #e1cb30;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-
-.button-logout span::before {
-  content: "Sign out";
-  color: #e1cb30;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-
-.button:hover {
-  box-shadow: 0 4px 6px rgba(113, 255, 88, 0.25);
-}
-
 body._touch .menu__link {
   flex: 1 1 auto;
 }
@@ -214,9 +181,6 @@ body._touch .menu__link {
   .header__container {
     min-height: 80px;
   }
-  .header__button {
-    flex: 0 0 160px;
-  }
 }
 @media (max-width: 767.98px) {
   .icon-menu {
@@ -226,7 +190,6 @@ body._touch .menu__link {
     flex-direction: column;
     justify-content: space-between;
     height: 18px;
-    margin: 0px 0px 0px 20px;
     z-index: 5;
     cursor: pointer;
   }
@@ -272,7 +235,7 @@ body._touch .menu__link {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.92);
-    padding: 120px 30px 30px 30px;
+    padding: 140px 30px 30px 30px;
     transition: left 0.3s ease 0s;
     overflow: auto;
     text-align: center;
@@ -908,26 +871,19 @@ body._touch .menu__link {
   padding: 60px 0;
   background-color: rgb(8, 8, 8);
 }
-.slider {
-  position: relative;
-  display: flex;
-}
-.slider__body {
-  overflow: hidden;
+/* Слайды */
+/* Родительский элемент */
+.slick-list {
   margin: 0 -10px;
 }
-.slider__items {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-.slider__item {
-  flex: 0 0 33.33333%;
-  max-width: 33.33333%;
+
+.slider__card {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 10px;
   padding-right: 10px;
+  border-radius: 0.5rem;
 }
 .slider__content {
   position: relative;
@@ -1084,24 +1040,6 @@ body._touch .menu__link {
 @media (max-width: 1175px) {
   .slider__control {
     display: none;
-  }
-}
-@media (max-width: 991.98px) {
-  .slider__item {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-@media (max-width: 767.98px) {
-  .slider__item {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  .slider__header {
-    transform: translateY(60%);
-  }
-  .slider__content {
-    padding-top: 10rem;
   }
 }
 /* ---LOCATION--- */

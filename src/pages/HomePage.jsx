@@ -6,6 +6,7 @@ import Price from "../components/Price";
 import Stats from "../components/Stats";
 import Rules from "../components/Rules";
 // import Slider from "../components/Slider";
+// import ImageSlider from "../components/ImageSlider";
 import Photo from "../components/Photo";
 import Location from "../components/Location";
 import  "./../scss/style.scss";

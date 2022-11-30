@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ImageClientOne from "../img/photo/client_1.jpg";
 import ImageClientTwo from "../img/photo/client_2.jpg";
 import ImageClientThree from "../img/photo/client_3.jpg";
@@ -6,18 +6,26 @@ import ImageClientFour from "../img/photo/client_4.jpg";
 import "./../scss/style.scss";
 
 
-const Slider = () => {
+const Slider = ({slides}) => {
 
     // const [pages, setPages] = useState([]);
     // const [offSet, setOffSet] = useState(0);
 
+    const [currentIndex, setCurrentIndex] = useState(0);
+
     const handlePrevArrow = () => {
-        console.log("ClickPrev");
-    }
+        const isFirstSlide = currentIndex === 0;
+        const newIndex = isFirstSlide ? slides.lenght - 1 : currentIndex - 1;
+        setCurrentIndex(newIndex);
+        console.log(setCurrentIndex(newIndex));
+    };
 
     const handleNextArrow = () => {
-        console.log("ClickNext");
-    }
+        const isLastSlide = currentIndex === slides.lenght - 1;
+        const newIndex = isLastSlide ? 0 : currentIndex + 1;
+        setCurrentIndex(newIndex);
+        console.log();
+    };
 
     return (
         <div className="slider">
@@ -36,7 +44,6 @@ const Slider = () => {
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
                                     dicta!
                                 </p>
-                                {/* <a href="#" class="button-card">Learn More</a> */}
                             </div>
                         </div>
                     </div>
@@ -53,7 +60,6 @@ const Slider = () => {
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
                                         dicta!
                                     </p>
-                                    {/* <a href="#" class="button-card">Learn More</a> */}
                             </div>
                         </div>
                     </div>
@@ -70,7 +76,6 @@ const Slider = () => {
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
                                     dicta!
                                 </p>
-                                {/* <a href="#" class="button-card">Learn More</a> */}
                             </div>
                         </div>
                     </div>
@@ -87,7 +92,6 @@ const Slider = () => {
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
                                     dicta!
                                 </p>
-                                {/* <a href="#" class="button-card">Learn More</a> */}
                             </div>
                         </div>
                     </div>
@@ -104,7 +108,6 @@ const Slider = () => {
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
                                     dicta!
                                 </p>
-                                {/* <a href="#" class="button-card">Learn More</a> */}
                             </div>
                         </div>
                     </div>
@@ -121,7 +124,6 @@ const Slider = () => {
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
                                         dicta!
                                     </p>
-                                    {/* <a href="#" class="button-card">Learn More</a> */}
                             </div>
                         </div>
                     </div>
