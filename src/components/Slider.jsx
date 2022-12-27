@@ -1,145 +1,74 @@
-import React, { useState } from "react";
-import ImageClientOne from "../img/photo/client_1.jpg";
-import ImageClientTwo from "../img/photo/client_2.jpg";
-import ImageClientThree from "../img/photo/client_3.jpg";
-import ImageClientFour from "../img/photo/client_4.jpg";
+import React, { useRef, useState } from "react";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import { dataSlide } from "../scripts/data";
 import "./../scss/style.scss";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const Slider = ({slides}) => {
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
 
-    // const [pages, setPages] = useState([]);
-    // const [offSet, setOffSet] = useState(0);
+// Import Swiper styles
+import 'swiper/css';
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-    const [currentIndex, setCurrentIndex] = useState(0);
 
-    const handlePrevArrow = () => {
-        const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? slides.lenght - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
-        console.log(setCurrentIndex(newIndex));
-    };
-
-    const handleNextArrow = () => {
-        const isLastSlide = currentIndex === slides.lenght - 1;
-        const newIndex = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
-        console.log();
-    };
-
+const Slider = () => {
     return (
-        <div className="slider">
-            <div className="slider__body">
-                <div className="slider__items">
-                    <div className="slider__item">
-                        <div className="slider__content">
-                            <img
-                                className="slider__content-image"
-                                src={ImageClientOne}
-                                alt={"ImageClientOne"}
-                            />
-                            <div className="slider__header">
-                                <h2 className="slider__header_title">Расслабься</h2>
-                                <p className="slider__header_text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-                                    dicta!
-                                </p>
-                            </div>
+        <>
+        <Swiper
+            breakpoints={{
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }}
+            modules={[Autoplay, Pagination, Navigation]}
+            
+            autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+            }}
+            navigation={{
+                prevEl: '.slider__control.prev',
+                nextEl: '.slider__control.next',
+            }}
+            // pagination={{
+            //     clickable: true,
+            // }}
+            
+            className="mySwiper"
+        >
+            { dataSlide.map( item => (
+                <SwiperSlide key={item.id} className="slider__item">
+                    <div className="slider__content">
+                        <img
+                            className="slider__content-image"
+                            src={item.img}
+                            alt={item.title}
+                        />
+                        <div className="slider__header">
+                            <h2 className="slider__header_title">{item.title}</h2>
+                            <p className="slider__header_text">{item.text}</p>
                         </div>
                     </div>
-                    <div className="slider__item">
-                        <div className="slider__content">
-                            <img
-                                className="slider__content-image"
-                                src={ImageClientTwo}
-                                alt={"ImageClientTwo"}
-                            />
-                            <div className="slider__header">
-                                <h2 className="slider__header_title">Участвуй в турнирах </h2>
-                                    <p className="slider__header_text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-                                        dicta!
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="slider__item">
-                        <div className="slider__content">
-                            <img
-                                className="slider__content-image"
-                                src={ImageClientThree}
-                                alt={"ImageClientThree"}
-                            />
-                            <div className="slider__header">
-                                <h2 className="slider__header_title">Получай денежные призы</h2>
-                                <p className="slider__header_text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-                                    dicta!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="slider__item">
-                        <div className="slider__content">
-                            <img
-                                className="slider__content-image"
-                                src={ImageClientFour}
-                                alt={"ImageClientFour"}
-                            />
-                            <div className="slider__header">
-                            <h2 className="slider__header_title">Играй вместе с друзьями</h2>
-                                <p className="slider__header_text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-                                    dicta!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="slider__item">
-                        <div className="slider__content">
-                            <img
-                                className="slider__content-image"
-                                src={ImageClientThree}
-                                alt={"ImageClientThree"}
-                            />
-                            <div className="slider__header">
-                            <h2 className="slider__header_title">Развивайся</h2>
-                                <p className="slider__header_text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-                                    dicta!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="slider__item">
-                        <div className="slider__content">
-                            <img
-                                className="slider__content-image"
-                                src={ImageClientTwo}
-                                alt={"ImageClientTwo"}
-                            />
-                            <div className="slider__header">
-                                <h2 className="slider__header_title">Общайся</h2>
-                                    <p className="slider__header_text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-                                        dicta!
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button onClick={handlePrevArrow} className="slider__control prev"></button>
-            <button onClick={handleNextArrow} className="slider__control next"></button>
-            <ol className="slider__indicators">
-                <li data-slide-to={0} />
-                <li data-slide-to={1} />
-                <li data-slide-to={2} />
-                <li data-slide-to={3} />
-                <li data-slide-to={4} />
-                <li data-slide-to={5} />
-            </ol>
-        </div>
+                </SwiperSlide>
+            ))}
+            <div className="slider__control prev"></div>
+            <div className="slider__control next"></div>
+        </Swiper>
+        </>
     );
 };
 

@@ -871,19 +871,10 @@ body._touch .menu__link {
   padding: 60px 0;
   background-color: rgb(8, 8, 8);
 }
-/* Слайды */
-/* Родительский элемент */
-.slick-list {
-  margin: 0 -10px;
-}
-
-.slider__card {
+.slider__item {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 0.5rem;
 }
 .slider__content {
   position: relative;
@@ -932,19 +923,6 @@ body._touch .menu__link {
 .slider__header__header > *:not(.slide__header_title) {
   opacity: 0;
 }
-.slider__content:hover.slider__header > *:not(.slider__header_title) {
-  opacity: 1;
-  transition: opacity 500ms linear;
-}
-
-.slider__content:hover .slider__header {
-  transform: translateY(0);
-}
-
-.slider__content:hover .slider__header_title::after {
-  transform: scaleX(1);
-}
-
 .slider_disable-transition {
   transition: none;
 }
@@ -1037,9 +1015,12 @@ body._touch .menu__link {
   background-color: rgba(80, 144, 12, 0.4);
 }
 
-@media (max-width: 1175px) {
-  .slider__control {
-    display: none;
+@media (max-width: 767.98px) {
+  .slider__header {
+    transform: translateY(60%);
+  }
+  .slider__content {
+    padding-top: 10rem;
   }
 }
 /* ---LOCATION--- */
@@ -1661,10 +1642,10 @@ span.preloader__text {
 
 .up-button {
   position: fixed;
-  padding: 5px;
+  padding: 15px;
   background-color: transparent;
   border-radius: 10px;
-  bottom: 10px;
+  bottom: 15px;
   right: 10px;
   z-index: 14;
   transition: all 0.3s ease 0s;

@@ -5,17 +5,6 @@
     }
 }
 
-
-/* Слайды */
-.slick-slide > div {
-    // margin: 0 10px;
-}
-
- /* Родительский элемент */
-.slick-list {
-    margin: 0 -10px;
-}
-
 .slider {
     // position: relative;
     // display: flex;
@@ -27,15 +16,13 @@
         // display: flex;
         // transition: transform 0.5s ease;
     }
-    &__card {
-        // flex: 0 0 33.33333%;
-        // max-width: 33.33333%;
+    &__item {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-left: 10px;
-        padding-right: 10px;
-        border-radius: 0.5rem;
+        // flex: 0 0 33.33333%;
+        // max-width: 33.33333%;
+        // padding: 0 10px;
     }
     &__content {
         position: relative;
@@ -89,18 +76,18 @@
     }
 }
 
-.slider__content:hover.slider__header > *:not(.slider__header_title) {
-    opacity: 1;
-    transition: opacity 500ms linear;
-}
+// .slider__content:hover.slider__header > *:not(.slider__header_title) {
+//     opacity: 1;
+//     transition: opacity 500ms linear;
+// }
 
-.slider__content:hover .slider__header {
-    transform: translateY(0);
-}
+// .slider__content:hover .slider__header {
+//     transform: translateY(0);
+// }
 
-.slider__content:hover .slider__header_title::after {
-    transform: scaleX(1);
-}
+// .slider__content:hover .slider__header_title::after {
+//     transform: scaleX(1);
+// }
 
 
 // .button-card {
@@ -209,11 +196,27 @@
     background-color: rgba(80, 144, 12, 0.4);
 }
 
-@media(max-width: 1175px) {
-    .slider__control {
-        display: none;
-    }
-}
+// .swiper-container {
+//     width: 480px;
+// }
+
+// @media (max-width: 992px) {
+//     .swiper-container {
+//         width: 992px;
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .swiper-container {
+//         width: 768px;
+//     }
+// }
+
+// @media(max-width: 1175px) {
+//     .slider__control {
+//         display: none;
+//     }
+// }
 
 // @media(max-width: 991.98px) {
 //     .slider {
@@ -224,17 +227,17 @@
 //     }
 // }
 
-// @media (max-width: 767.98px) {
-//     .slider {
-//         &__item {
-//             flex: 0 0 100%;
-//             max-width: 100%;
-//         }
-//         &__header {
-//             transform: translateY(60%);
-//         }
-//         &__content {
-//             padding-top: 10rem;
-//         }
-//     }
-// }
+@media (max-width: 767.98px) {
+    .slider {
+        // &__item {
+        //     flex: 0 0 100%;
+        //     max-width: 100%;
+        // }
+        &__header {
+            transform: translateY(60%);
+        }
+        &__content {
+            padding-top: 10rem;
+        }
+    }
+}
